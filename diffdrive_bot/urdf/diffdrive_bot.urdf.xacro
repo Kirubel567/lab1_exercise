@@ -184,6 +184,31 @@
   <!-- TODO (exercise Step 1): depth camera on the back face, looking along -x.
        Add the link depth_camera_link (visual, collision, inertial) and a fixed joint
        to base_link, turned half a turn about z. -->
+  <link name="depth_camera_link">  
+    <visual>  
+      <geometry>
+        <box size="${depth_camera_size}" />  
+      </geometry>
+      <material name="blue" />  
+    </visual>
+    <collision>  
+      <geometry>
+        <box size="${depth_camera_size}" />
+      </geometry>
+    </collision>
+    <inertial>  
+      <mass value="${depth_camera_mass}" />  
+      <xacro:box_inertia m="${depth_camera_mass}" x="0.03" y="0.08" z="0.03" />  
+    </inertial>
+  </link>
+
+  <joint name="depth_camera_joint" type="fixed">  
+    <parent link="base_link" />  
+    <child link="depth_camera_link" />  
+    <origin xyz="${-(chassis_length/2 + 0.015)} 0 0" rpy="0 0 ${pi}" />  
+  </joint>
+
+
 
   
 
