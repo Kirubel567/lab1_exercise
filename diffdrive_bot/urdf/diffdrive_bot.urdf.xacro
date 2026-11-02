@@ -286,6 +286,28 @@
   <!-- TODO (exercise Step 1): Gazebo sensor of type depth_camera for depth_camera_link,
        publishing on /depth_camera, with its camera_info_topic set to
        /depth_camera/camera_info -->
+  <gazebo reference="depth_camera_link">  
+    <sensor name="depth_camera" type="depth_camera">  
+      <topic>/depth_camera</topic>  
+      <gz_frame_id>depth_camera_link</gz_frame_id>  
+      <update_rate>10</update_rate>  
+      <always_on>true</always_on>  
+      <camera>
+        <camera_info_topic>/depth_camera/camera_info</camera_info_topic>  
+        <horizontal_fov>1.047</horizontal_fov>  
+        <image>
+          <width>320</width>  
+          <height>240</height>  
+          <format>R_FLOAT32</format>  
+        </image>
+        <clip>
+          <near>0.1</near>  
+          <far>10</far>  
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+
 
   <!-- TODO (exercise Step 1): Gazebo sensor of type imu for imu_link, publishing on /imu -->
 
