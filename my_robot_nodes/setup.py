@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='kirubel',
     maintainer_email='kirubel.wubet1996@gmail.com',
-    description='TODO: Package description',
+    description='My nodes for diffdrive_bot',
     license='MIT',
     extras_require={
         'test': [
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'turn_away = my_robot_nodes.turn_away:main',
         ],
     },
 )
