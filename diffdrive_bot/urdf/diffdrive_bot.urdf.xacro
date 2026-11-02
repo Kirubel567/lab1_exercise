@@ -209,11 +209,16 @@
   </joint>
 
 
-
-  
-
   <!-- TODO (exercise Step 1): IMU at the centre of the chassis.
        Add the link imu_link and a fixed joint to base_link. -->
+  <link name="imu_link" /> 
+
+  <joint name="imu_joint" type="fixed">  
+    <parent link="base_link" />  
+    <child link="imu_link" />
+    <origin xyz="0 0 0" />  
+  </joint>
+
 
   <!-- Frictionless caster so it slides instead of dragging -->
   <gazebo reference="caster">
