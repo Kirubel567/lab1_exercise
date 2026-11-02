@@ -3,14 +3,16 @@
 <package format="3">
   <name>my_robot_interfaces</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Message, service and action types for my diffdrive_bot nodes</description>
   <maintainer email="kirubel.wubet1996@gmail.com">kirubel</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
   <export>
     <build_type>ament_cmake</build_type>
